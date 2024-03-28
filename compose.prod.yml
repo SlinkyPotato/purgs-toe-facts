@@ -5,10 +5,10 @@ services:
     image: solidchain/purgs-toe-facts:latest
     restart: always
     networks:
-      - prod_random_server
+      - prod_fun_server
     environment:
       DOTENV_KEY: ${DOTENV_KEY}
 
 networks:
-  prod_random_server:
+  prod_fun_server:
     external: true
