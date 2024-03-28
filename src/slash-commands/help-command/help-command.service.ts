@@ -10,7 +10,7 @@ import { InteractionReplyOptions } from 'discord.js';
 @Injectable()
 export class HelpCommandService {
   @Handler()
-  async onHelpCommand(): Promise<InteractionReplyOptions> {
+  onHelpCommand(): InteractionReplyOptions {
     return {
       embeds: [
         {
