@@ -16,12 +16,12 @@ export class HelpCommandService {
         {
           title: 'Help Command',
           description:
-            'This bot can do things. ',
+            'This bot replies back with a "random" toe fact. It is activated whenever toe is mentioned in a message.',
           fields: [
             {
-              name: '-> /dosomething',
+              name: '-> toe',
               value:
-                'A description of what this command does.',
+                'Mention toe in a channel to get a random toe fact.',
               inline: false,
             },
             {

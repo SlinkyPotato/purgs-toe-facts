@@ -51,7 +51,7 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/purgs-toe-facts:${{ steps.package.outputs.PACKAGE_VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      - run: docker cp $(docker run -d --rm ${{ secrets.DOCKER_USERNAME }}/app-name:latest):/app/dist ./dist
+      - run: docker cp $(docker run -d --rm ${{ secrets.DOCKER_USERNAME }}/purgs-toe-facts:latest):/app/dist ./dist
       - uses: vimtor/action-zip@v1
         with:
           files: dist/ CHANGELOG.md LICENSE.md README.md package.json
