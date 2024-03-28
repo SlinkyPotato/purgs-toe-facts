@@ -1,8 +1,8 @@
-name: prod_random
+name: prod_fun
 services:
   discord-bot-1:
-    container_name: app-name-1_prod-random
-    image: random/purgs-toe-facts:latest
+    container_name: purgs-to-facts-1_prod-fun
+    image: solidchain/purgs-toe-facts:latest
     restart: always
     networks:
       - prod_random_server
