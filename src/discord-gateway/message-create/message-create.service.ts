@@ -10,7 +10,7 @@ export class MessageCreateService {
   async onMessageCreate(message: Message): Promise<any> {
     try {
       if (message.author.bot) return;
-      if (message.content.match(/toe/gi)) {
+      if (message.content.match(/^toe$/gi) || message.content.match(/^toes$/gi) {
         await message.reply(this.TOE_FACTS[Math.floor(Math.random() * this.TOE_FACTS.length)]);
       }
     } catch (e) {
