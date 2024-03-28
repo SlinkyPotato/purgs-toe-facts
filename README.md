@@ -1,4 +1,4 @@
-# Discord bot template
+# Get yo toe facts
 
 ## Description
 A discord bot template for creating a discord bot using discord.js.

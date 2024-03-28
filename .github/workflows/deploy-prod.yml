@@ -29,20 +29,11 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test:cov
-      - name: Retrieve pre-release package.json
-        id: pre-release
-        run: |
-          echo PRERELEASE_VERSION=$(node -e "console.log(require('./package.json').version)") >> "$GITHUB_OUTPUT"
-      - name: Remove prerelease tags
-        run: git tag -d $(git tag -l "v$(node -e "console.log('${{ steps.pre-release.outputs.PRERELEASE_VERSION }}'.split('-')[0]);")-*")
-      - run: pnpm standard-version --dry-run > changes.md | exit 0
-      - run: pnpm standard-version
       - name: Retrieve package.json
         id: package
         run: |
           echo PACKAGE_VERSION=$(node -e "console.log(require('./package.json').version)") >> "$GITHUB_OUTPUT"
       - run: git push --follow-tags
-      - run: node -e "require('@badgebuddy/common')['parseReleaseUtil']();"
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker Hub
@@ -55,10 +46,9 @@ jobs:
         with:
           context: .
           load: true
-          # update app-name with name of the app
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/app-name:latest
-            ${{ secrets.DOCKER_USERNAME }}/app-name:${{ steps.package.outputs.PACKAGE_VERSION }}
+            ${{ secrets.DOCKER_USERNAME }}/purgs-toe-facts:latest
+            ${{ secrets.DOCKER_USERNAME }}/purgs-toe-facts:${{ steps.package.outputs.PACKAGE_VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
       - run: docker cp $(docker run -d --rm ${{ secrets.DOCKER_USERNAME }}/app-name:latest):/app/dist ./dist

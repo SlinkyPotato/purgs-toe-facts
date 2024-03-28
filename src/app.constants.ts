@@ -1,1 +1,1 @@
-export const ENV_TEST_NAME = 'TEST_NAME' as const;
+export const ENV_DISCORD_BOT_TOKEN = 'DISCORD_BOT_TOKEN' as const;
