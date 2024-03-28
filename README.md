@@ -1,7 +1,7 @@
-# Get yo toe facts
+# Purg's Toe Facts
 
 ## Description
-A discord bot template for creating a discord bot using discord.js.
+A discord bot that provides random facts about toes.
 
 ## Installation
 Instructions on installation and setup is found under [install.md](docs/install.md).
