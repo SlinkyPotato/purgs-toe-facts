@@ -1,0 +1,28 @@
+name: local_appcontainer
+services:
+  discord-bot-1:
+    container_name: local_app-name-1
+    depends_on:
+      - redis
+    build:
+      context: .
+    env_file:
+      - .env
+    environment:
+      TEST: test
+    networks:
+      - local_server
+    volumes:
+      - ./logs:/app/logs
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - local_server
+
+networks:
+  local_server:
+    external: true
