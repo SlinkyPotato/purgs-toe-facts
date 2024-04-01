@@ -69,5 +69,6 @@ export class MessageCreateService {
     'In some cultures, kissing or touching someone\'s toes is a sign of respect or submission.',
     'Some animals, such as primates and certain birds, have opposable toes that aid in grasping objects.',
     'The toes help distribute body weight evenly while standing and walking.',
+    'https://www.youtube.com/watch?v=3fyYXqzKvQo'
   ];
 }
