@@ -11,10 +11,6 @@ export class MessageCreateService {
     try {
       if (message.author.bot) return;
 
-      if (message.author.id === '429026586570784770') { // ryan
-        return await message.reply('we know how much you like toes ryan');
-      }
-
       if (message.content.match(/\s*toe/gi)
         ?? message.content.match(/\s*toes/gi)
         ?? message.content.match(/^\s*evertoe$/gi)) {
