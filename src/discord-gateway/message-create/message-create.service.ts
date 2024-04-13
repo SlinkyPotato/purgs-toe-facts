@@ -12,7 +12,7 @@ export class MessageCreateService {
       if (message.author.bot) return;
 
       if (message.author.id === '429026586570784770') { // ryan
-        return await message.react('we know how much you like toes ryan');
+        return await message.reply('we know how much you like toes ryan');
       }
 
       if (message.content.match(/\s*toe/gi)
