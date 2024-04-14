@@ -14,6 +14,10 @@ export class MessageCreateService {
       if (message.content.match(/\s*toe/gi)
         ?? message.content.match(/\s*toes/gi)
         ?? message.content.match(/^\s*evertoe$/gi)) {
+
+        if (message.author.id === '4290265866570784770') {
+           return await message.reply('we know how much you like toes ryan');
+        }
         await message.reply(this.TOE_FACTS[Math.floor(Math.random() * this.TOE_FACTS.length)]);
       }
     } catch (e) {
