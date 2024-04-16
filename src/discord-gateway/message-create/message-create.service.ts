@@ -15,7 +15,7 @@ export class MessageCreateService {
     try {
       if (message.author.bot) return;
 
-      if (message.content.match(/\s*whisper to me/gi)) {
+      if (message.content.match(/\s*whisper to me/gi) && !this.activeWhisperUsers.get(message.author.id)) {
         this.activeWhisperUsers.set(message.author.id, true);
         await message.reply({
           files: [{
