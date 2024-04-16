@@ -17,6 +17,7 @@ RUN pnpm build
 COPY CHANGELOG.md /app/dist/
 COPY LICENSE.md /app/dist/
 COPY README.md /app/dist/
+COPY assets /app/dist/assets/
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --offline --prod --frozen-lockfile
 
