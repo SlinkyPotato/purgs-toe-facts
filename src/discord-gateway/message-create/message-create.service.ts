@@ -16,9 +16,10 @@ export class MessageCreateService {
         ?? message.content.match(/^\s*evertoe$/gi)) {
 
         if (message.author.id === '429026586570784770') {
-           return await message.reply('we know how much you like toes ryan');
+          await message.reply('we know how much you like toes ryan');
+        } else {
+          await message.reply(this.TOE_FACTS[Math.floor(Math.random() * this.TOE_FACTS.length)]);
         }
-        await message.reply(this.TOE_FACTS[Math.floor(Math.random() * this.TOE_FACTS.length)]);
       }
     } catch (e) {
       this.logger.error(e);
@@ -26,11 +27,11 @@ export class MessageCreateService {
   }
 
   TOE_FACTS = [
+    'The longest toe is usually the second toe, but this can vary among individuals.',
     'Toes are digits of the foot and are analogous to fingers on the hand.',
     'Humans typically have five toes on each foot.',
     'The big toe is also known as the hallux.',
     'Toes help with balance and stability while standing and walking.',
-    'The longest toe is usually the second toe, but this can vary among individuals.',
     'Some people have a condition called Morton\'s toe, where the second toe is longer than the big toe.',
     'Toes are composed of bones called phalanges, similar to fingers.',
     'Each toe has three phalanges, except for the big toe, which has two.',
