@@ -16,18 +16,12 @@ export class HelpCommandService {
         {
           title: 'Help Command',
           description:
-            'This bot replies back with a "random" toe fact. It is activated whenever toe is mentioned in a message.',
+            'Gives a  random toe fact. Just say "toe". Say "whisper to me" to get something special',
           fields: [
-            {
-              name: '-> toe',
-              value:
-                'Mention toe in a channel to get a random toe fact.',
-              inline: false,
-            },
             {
               name: '-> Useful Links',
               value:
-                '[Github](https://github.com/SlinkyPotato/discord-bot-template)',
+                '[Github Repo](https://github.com/SlinkyPotato/purgs-toe-facts)',
               inline: false,
             },
           ],
