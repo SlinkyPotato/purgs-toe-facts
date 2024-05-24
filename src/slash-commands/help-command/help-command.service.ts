@@ -16,7 +16,7 @@ export class HelpCommandService {
         {
           title: 'Help Command',
           description:
-            'Gives a  random toe fact. Just say "toe". Say "whisper to me" to get something special',
+            'Gives a  random toe fact. Just say "toe". Say "whisper to me" to get something special.',
           fields: [
             {
               name: '-> Useful Links',
